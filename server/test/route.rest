@@ -1,0 +1,5 @@
+
+# GETS THE USER FROM GH API
+
+GET http://localhost:3002/api/v1/johnmaev HTTP/1.1
+
