@@ -1,21 +1,28 @@
-const express = require('express');
+// GENERAL
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+require("dotenv").config();
+const path = require("path");
 const app = express();
-const axios = require('axios');
 
-const es6John = async () => {
-  const user = await axios
-    .get(`https://api.github.com/users/Medic1111/repos`)
-    .then((response) => {
-      const list = response.data;
-      list.forEach(({ name, description, html_url }) => {
-        console.log(name, description, html_url);
-      });
-    })
-    .catch((err) => console.log(err));
-};
+// MIDDLEWARES
+app.use(express.json());
+app.use(cors({ origin: "*" }));
+app.use(morgan("dev"));
+app.use(express.static(path.resolve(__dirname, "../client/build")));
 
-es6John();
+// ROUTES
+const { fetchUserRoute } = require("./routes/get");
 
-app.listen(3002, () => {
-  console.log('Server is running');
+// PERSONAL MIDDLEWARES
+app.use("/", fetchUserRoute);
+
+// UNIVERSAL
+app.get("*", (req, res) => {
+  res.sendFile(
+    express.static(path.resolve(__dirname, "../client/build", "index.html"))
+  );
 });
+
+module.exports = app;
