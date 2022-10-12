@@ -1,17 +1,33 @@
 {
   "name": "gistory",
   "version": "1.0.0",
-  "description": "",
+  "description": "Github repo timeline React application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/index",
+    "build": "cd client && npm install && npm run build",
+    "test": "jest --watchAll --detectOpenHandles"
+  },
+  "engines": {
+    "node": "18.2.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnmal-dev/Gistory.git"
   },
   "keywords": [],
-  "author": "",
+  "contributors": [
+    {
+      "name": "Aryse Tansy",
+      "email": "paganowebdev@gmail.com",
+      "url": "http://pagano.dev/"
+    },
+    {
+      "name": "John Malapit",
+      "email": "contact@johnmal.dev",
+      "url": "https://www.johnmal.dev/"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/johnmal-dev/Gistory/issues"
@@ -22,7 +38,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.1.2",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.0"
   }
 }
