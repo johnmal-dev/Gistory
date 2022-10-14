@@ -6,17 +6,19 @@ const fetchUserController = async (req, res) => {
   await axios
     .get(`https://api.github.com/users/${user}/repos`)
     .then((response) => {
+      let data = response.data[0].owner;
+
       let owner = {
-        login: response.data[0].owner.login,
-        avatar_url: response.data[0].owner.avatar_url,
-        html_url: response.data[0].owner.html_url,
+        login: data.login,
+        avatar_url: data.avatar_url,
+        html_url: data.html_url,
       };
 
-      let filteredList = [];
+      let repos = [];
 
       response.data.forEach(
         ({ name, description, html_url, created_at, updated_at }) => {
-          filteredList.push({
+          repos.push({
             name,
             description,
             html_url,
@@ -30,7 +32,7 @@ const fetchUserController = async (req, res) => {
         message: "Success",
         results: response.data.length,
         owner,
-        repos: filteredList,
+        repos,
       });
     })
     .catch((err) => {

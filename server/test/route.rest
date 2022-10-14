@@ -3,3 +3,8 @@
 
 GET http://localhost:3002/api/v1/Medic1111 HTTP/1.1
 
+###
+
+# GETS 404 IF USER NOT FOUND
+
+GET http://localhost:3002/api/v1/Meakdoksaof1 HTTP/1.1

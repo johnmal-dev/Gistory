@@ -23,6 +23,9 @@ describe("When accessing the get route ", () => {
         expect(serverRes.body).toEqual(
           expect.objectContaining({ repos: expect.any(Array) })
         );
+        expect(serverRes.body).toEqual(
+          expect.objectContaining({ owner: expect.any(Object) })
+        );
       })
       .catch((err) => console.log(err));
   });
