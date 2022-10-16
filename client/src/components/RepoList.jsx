@@ -1,14 +1,14 @@
 import React from 'react';
 import RepoItem from './RepoItem';
 
-const RepoList = ({repos}) => {
+const RepoList = ({ repos }) => {
   return (
     <div>
-      <ul className='grid grid-cols-1 gap-6 sm:grid-cols-2 mt-4'>
+      <ul className='flex flex-col gap-6 mt-4'>
         {repos.map((repo, i) => (
           <li
             key={i}
-            className='col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow'
+            className='rounded-lg bg-white shadow w-full sm:w-2/5 even:self-end odd:bg-blue-500 even:bg-red-500'
           >
             <RepoItem repo={repo} />
           </li>
