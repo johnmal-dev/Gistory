@@ -8,7 +8,7 @@ const RepoList = ({ repos }) => {
         {repos.map((repo, i) => (
           <li
             key={i}
-            className='rounded-lg bg-white shadow w-full sm:w-2/5 even:self-end odd:bg-blue-500 even:bg-red-500'
+            className='rounded bg-white shadow w-full sm:w-2/5 even:self-end'
           >
             <RepoItem repo={repo} />
           </li>

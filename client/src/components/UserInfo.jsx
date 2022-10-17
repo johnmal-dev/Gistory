@@ -3,7 +3,7 @@ import React from 'react';
 const UserInfo = ({ user }) => {
   const { login, avatar_url, html_url } = user;
   return (
-    <div className='rounded-lg bg-white shadow mt-2 flex flex-col justify-center items-center py-4 text-gray-900'>
+    <div className='rounded bg-white shadow mt-2 flex flex-col justify-center items-center py-4 text-gray-900'>
       <a
         href={html_url}
         target='_blank'
