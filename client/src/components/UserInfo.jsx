@@ -5,7 +5,7 @@ const UserInfo = ({ user }) => {
   const { login, avatar_url, html_url } = user;
   return (
     <Zoom>
-      <div className='text-center rounded bg-white shadow mt-2 flex flex-col justify-center items-center py-4 text-gray-900'>
+      <div className='text-center rounded bg-white shadow mt-2 flex flex-col justify-center items-center py-4 text-gray-900 max-w-2xl mx-auto'>
         <a
           href={html_url}
           target='_blank'

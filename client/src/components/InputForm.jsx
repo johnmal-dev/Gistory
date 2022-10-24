@@ -68,7 +68,7 @@ const InputForm = ({ setProfile, setIsLoading }) => {
           </button>
         </form>
         {errorMessage && (
-          <div className='mt-3 border w-full rounded-md px-4 py-2 bg-red-400 border-transparent font-bold'>
+          <div className='mt-3 border w-full rounded-md px-4 py-2 bg-red-400 border-transparent font-bold text-center'>
             {errorMessage}
           </div>
         )}
