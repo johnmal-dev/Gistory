@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server/index",
     "build": "cd client && npm install && npm run build",
-    "test": "jest --watchAll --detectOpenHandles"
+    "test": "jest --watchAll --detectOpenHandles",
+    "start:test": "NODE_ENV=test node server/index"
   },
   "engines": {
     "node": "18.2.0"
